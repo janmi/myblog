@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%= title %></title>
+</head>
+<body>
+	<%- include('./component/header') %>
+	<h1><%= title %></h1>
+	<p> holle EJS</p>
+  <a href="javascript:;" id="J_add">Add</a>
+  <script src="https://cdn.staticfile.org/jquery/1.12.1/jquery.js"></script>
+  <script>
+    $('#J_add').click(function(event) {
+      const data = {
+        a: 1,
+        b: 2
+      }
+      $.ajax({
+        url: '/v1/article-add',
+        type: 'POST',
+        dataType: 'json',
+        data,
+      })
+      .done(function(ret) {
+        console.log(ret)
+        console.log("success");
+      })
+      .fail(function(error) {
+        console.log(error);
+      })
+      .always(function() {
+        console.log("complete");
+      });
+    });
+  </script>
+</body>
+</html>
