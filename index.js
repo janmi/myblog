@@ -10,7 +10,7 @@ const indexRoute = require('./routes/index.js')
 const aboutRoute = require('./routes/about.js')
 const usersRouter = require('./routes/users.js')
 const articleAddRouter = require('./routes/article-add.js')
-const articleAddRouter = require('./routes/article-detail.js')
+// const articleDetailRouter = require('./routes/article-detail.js')
 
 const app = new Koa()
 const router = new Router()
